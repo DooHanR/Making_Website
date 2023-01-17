@@ -31,4 +31,30 @@
     // numeric variables
     $count = 17.5;
     echo $count;
+
+    // Arrays
+    $team = array('Hello<br>', 'This<br>', 'is<br>', 'my<br>',
+                'world<br>');
+    echo $team[0];
+    echo $team[1];
+    echo $team;
+
+    // Two-dimensional arrays
+    $oxo = array(array('x', ' ', 'o'),
+                 array('o', 'o', 'x'),
+                 array('x', 'o', ' '));
+
+    print "<br>\n";
+    echo $oxo[0][0];
+
+    /* 
+    Variable-naming rules
+     
+    대부분 여타 다른것과 유사하며 주의점이라면
+    case-sensitive : ABC와 abc는 다른것.
+    */
+
+
+
+
 ?>
