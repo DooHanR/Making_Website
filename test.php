@@ -46,6 +46,7 @@
 
     print "<br>\n";
     echo $oxo[0][0];
+    print "<br>\n";
 
     /* 
     Variable-naming rules
@@ -54,7 +55,32 @@
     case-sensitive : ABC와 abc는 다른것.
     */
 
+    // Operators
+    $test = 6 + 2;
+    print "$test<br>\n";
 
+    // Arithmetic operators
+    $test = 5 + 1;
+    ++$test;
+    --$test;
+    $test = $test**2; // 아 할당을 해줘야 바뀐다.
+    print "$test<br>\n";
+
+    // Assignment operators
+    // =, +=, -=, *=, /=, .=, %=
+    $test += 1;
+    $test = $test + 1;    
+    print "$test<br>\n";
+
+    // Comparison operators
+    // ==, !=, >, <, >=, <=, <>, ===, !==
+    
+    // Logical operators
+    // &&(and), and(낮은 우선순위), ||(or), or(낮은 우선순위), !, xor
+    $ammonia = True;
+    $bleach = False;
+    $ingredient = $ammonia xor $bleach;
+    print "$ingredient<br>\n";
 
 
 ?>
