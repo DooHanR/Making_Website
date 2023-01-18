@@ -1,6 +1,6 @@
 <?php
     // semicolon 반드시 사용.
-    echo "hello world\n<br>";
+    // echo "hello world\n<br>";
     
     /* 
     여러줄 주석
@@ -24,29 +24,29 @@
 
     // string variables
     $username = "Fred Smith\n<br>";
-    echo $username;
+    // echo $username;
     $current_user = $username;
-    echo $current_user;
+    // echo $current_user;
     
     // numeric variables
     $count = 17.5;
-    echo $count;
+    // echo $count;
 
     // Arrays
     $team = array('Hello<br>', 'This<br>', 'is<br>', 'my<br>',
                 'world<br>');
-    echo $team[0];
-    echo $team[1];
-    echo $team;
+    // echo $team[0];
+    // echo $team[1];
+    // echo $team;
 
     // Two-dimensional arrays
     $oxo = array(array('x', ' ', 'o'),
                  array('o', 'o', 'x'),
                  array('x', 'o', ' '));
 
-    print "<br>\n";
-    echo $oxo[0][0];
-    print "<br>\n";
+    // print "<br>\n";
+    // echo $oxo[0][0];
+    // print "<br>\n";
 
     /* 
     Variable-naming rules
@@ -57,20 +57,20 @@
 
     // Operators
     $test = 6 + 2;
-    print "$test<br>\n";
+    // print "$test<br>\n";
 
     // Arithmetic operators
     $test = 5 + 1;
     ++$test;
     --$test;
     $test = $test**2; // 아 할당을 해줘야 바뀐다.
-    print "$test<br>\n";
+    // print "$test<br>\n";
 
     // Assignment operators
     // =, +=, -=, *=, /=, .=, %=
     $test += 1;
     $test = $test + 1;    
-    print "$test<br>\n";
+    // print "$test<br>\n";
 
     // Comparison operators
     // ==, !=, >, <, >=, <=, <>, ===, !==
@@ -80,9 +80,28 @@
     $ammonia = True;
     $bleach = False;
     $ingredient = $ammonia xor $bleach;
-    print "$ingredient<br>\n";
+    // print "$ingredient<br>\n";
 
     // Varialbe Assignment.
     $x += 10; // x = x + 10;
     $y -= 10; // y = y - 10;
+
+    // Variable Incremeting and decrementing
+    $x = 10;
+    $y = 0;
+    if (++$x == 10) print "$x<br>\n"; // 이 둘의 차이에 주목하라.
+    // if ($y-- == 0) print "$y<br>\n";
+
+    // String concatenation
+    $msgs = 5;
+    echo "You have " . $msgs . " messages.<br>\n";
+    print "You have $msgs messages.<br>\n";    
+
+
+
+
+
+
+
+
 ?>
