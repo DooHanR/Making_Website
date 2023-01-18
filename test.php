@@ -82,5 +82,7 @@
     $ingredient = $ammonia xor $bleach;
     print "$ingredient<br>\n";
 
-
+    // Varialbe Assignment.
+    $x += 10; // x = x + 10;
+    $y -= 10; // y = y - 10;
 ?>
