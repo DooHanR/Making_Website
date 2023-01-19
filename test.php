@@ -156,11 +156,11 @@
     심지어 문맥에 맞춰서 변수의 type을 바꾸는 기능을 하기도 한다.*/
 
     $number = 12345 * 67890; // 838102050, 숫자 변수.
-    echo substr($number ,3 ,1); // substr은 string 대상 함수이다.
+    // echo substr($number ,3 ,1); // substr은 string 대상 함수이다.
 
     $pi = "3.1415927"; // string 변수.
     $radius = 5; // 숫자 변수
-    echo $pi * ($radius * $radius); // string을 숫자처럼 대하는 모습.
+    // echo $pi * ($radius * $radius); // string을 숫자처럼 대하는 모습.
 
     /* 이런 형변환은 여러모로 편하긴 하지만, 항상 작동하는게 아니니까 주의
     하도록 하자. */
@@ -178,8 +178,18 @@
 
 
     /* Predefined Constants 
-     */
+     php 에는 유용한 사전에 정의된 constant 들이 몇개 있고
+    혹시나 중복 정의를 막기 위해 앞뒤로 두개의 언더바(__)를 사용한다.*/
+
+    // __LINE__, __FILE__, __DIR__, __FUNCTION__, __CLASS__, __METHOD__, __NAMESPACE__
+
+    // echo "this is line " . __LINE__ . " of file " . __FILE__;
 
 
+    /* The Difference Between the echo and print Commands 
+     echo와 print의 차이점. 
+    echo 는 print보다 빠르지만 함수처럼 작동하지 않아 몇몇가지 출력에 한계가 있는 반면
+    print는 함수처럼 변수를 받고 return 하는 형태를 취해, 응용성이 높지만 속도가 다소 느리다.*/
 
+    $b ? print "TRUE" : print "FALSE"; // 이게 echo로는 안됨.
 ?>
