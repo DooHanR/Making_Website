@@ -151,5 +151,35 @@
      또한 주석사용에 유의하자. */
 
 
-     /* Variable Typing */
+     /* Variable Typing 
+      PHP는 느슨한 언어이다. 따라서 변수가 반드시 사전에 미리 선언될 필요가 없다.
+    심지어 문맥에 맞춰서 변수의 type을 바꾸는 기능을 하기도 한다.*/
+
+    $number = 12345 * 67890; // 838102050, 숫자 변수.
+    echo substr($number ,3 ,1); // substr은 string 대상 함수이다.
+
+    $pi = "3.1415927"; // string 변수.
+    $radius = 5; // 숫자 변수
+    echo $pi * ($radius * $radius); // string을 숫자처럼 대하는 모습.
+
+    /* 이런 형변환은 여러모로 편하긴 하지만, 항상 작동하는게 아니니까 주의
+    하도록 하자. */
+
+
+    /* Constants 
+     constant는 program의 remainder에 set 되어서 변하지 않는 값을 의미한다.
+    constant는 보통 모두 대문자로 쓰는게 좋다. 그리고 constant를 사용할때
+    '$'가 선행하지 않는다는을 기억하자.*/
+
+    define("ROOT_LOCATION", "/usr/local/www/");
+    $directory = ROOT_LOCATION;
+    // echo ROOT_LOCATION; // $가 사용되지 않는 constant의 모습.
+    // echo $directory
+
+
+    /* Predefined Constants 
+     */
+
+
+
 ?>
