@@ -191,5 +191,28 @@
     echo 는 print보다 빠르지만 함수처럼 작동하지 않아 몇몇가지 출력에 한계가 있는 반면
     print는 함수처럼 변수를 받고 return 하는 형태를 취해, 응용성이 높지만 속도가 다소 느리다.*/
 
-    $b ? print "TRUE" : print "FALSE"; // 이게 echo로는 안됨.
+    // $b ? print "TRUE" : print "FALSE"; // 이게 echo로는 안됨.
+
+
+    /* Functions 
+     이전에 배운 함수와 같다. 불필요한 코드의 중복을 막고 수정을 용이하게 해주고
+    필요할때마다 간편하게 호출할 수 있다.*/
+
+    function longdate($timestamp)
+    {
+        return date("l F jS Y", $timestamp);
+    }
+
+    // print longdate(time()) . "<br>\n";
+
+
+    /* Variable Scope 
+     PHP 에서는 변수의 범위를 지정 해 줄 수 있다. 예를 들어 함수 내에서 사용후 
+    함수가 return 하면 잊도록, 이게 바로 php 내에서 변수를 사용하는 방식이다.
+    혹은 global로 선언해 프로그램 내 어디서든지 접근을 허용할 수 있다. */
+
+    /* Local variables 
+     지역 변수는 함수 내에서 생성되고, 사용된후 함수가 return 하기 전에 사라지는
+    변수들을 의미한다. */
+
 ?>
