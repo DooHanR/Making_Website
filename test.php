@@ -215,4 +215,9 @@
      지역 변수는 함수 내에서 생성되고, 사용된후 함수가 return 하기 전에 사라지는
     변수들을 의미한다. */
 
+    function longdate($timestamp)
+    {
+        $temp = date("l F jS Y", $timestamp);
+        return "The date is $temp";
+    }
 ?>
