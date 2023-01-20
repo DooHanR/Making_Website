@@ -197,11 +197,12 @@
     /* Functions 
      이전에 배운 함수와 같다. 불필요한 코드의 중복을 막고 수정을 용이하게 해주고
     필요할때마다 간편하게 호출할 수 있다.*/
-
-    function longdate($timestamp)
-    {
-        return date("l F jS Y", $timestamp);
-    }
+    
+    // function longdate($timestamp)
+    // {
+    //     return date("l F jS Y", $timestamp);
+    // }  
+ 
 
     // print longdate(time()) . "<br>\n";
 
@@ -220,4 +221,7 @@
         $temp = date("l F jS Y", $timestamp);
         return "The date is $temp";
     }
+
+    $temp2 = longdate(time());
+    print $temp2;
 ?>
