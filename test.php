@@ -225,11 +225,68 @@
     
 
     // 개선 1단계.
-    function longdate($timestamp)
-    {
-        return date("l F jS Y", $timestamp);
-    }
 
-    $temp2 = longdate(time());
-    print $temp2;
+    // function longdate($timestamp)
+    // {
+    //     return date("l F jS Y", $timestamp);
+    // }
+
+    // $temp2 = longdate(time());
+    // print $temp2;
+
+
+    /* Global variables
+     전역 변수, 프로그램 내에서 자유롭게 사용하거나 혹은 너무 크고, 복잡해서
+    함수 따위의 매개변수로 넘겨주고 싶지 않을때 사용한다.
+    그리고 가능한한 사용을 자제해라. 전역변수가 마지막으로 남은 유일한
+    방법일때에만 사용하는게 좋다. */
+
+    // global $is_logged_in;
+
+
+    /* Static variables 
+     정적 변수는 선언 함수 내에서만 사용되면서 전역 변수 처럼
+    그 값이 유지되서, 반복 호출시에 이전의 값을 기억할 수 있는 변수를 의미한다. */
+
+    // function test()
+    // {
+    //     static $count = 0;
+    //     print "$count<br>\n";
+    //     $count++;
+    // }
+
+    // test();
+    // test();
+    // test();
+
+    // static $static_int = 0; // allowed
+    // static $static_int = 1+2; // correct
+    // static $static_int = sqrt(144); // Disallowed
+
+
+    /* Superglobal variables 
+     php 에서 자체적으로 제공하는 사전 정의된 변수들이 존재 한다.
+    이를 superglobal 변수라고 한다.
+     Superglobal vairalbe 에는 현재 작동하는 프로그램에 대한 정보나
+    환경에 대한 많은 정보를 가지고 있다. 
+    
+    $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE
+    $_SESSION, $_REQUEST, $_ENV
+    */
+
+    // $came_from = $_SERVER['HTTP_REFERER'];
+    // print "$came_from";
+
+
+    /* Superglobals and security 
+     Superglobal 변수들은 해킹에 사용될 수 있다. 그래서 일종의 처리가 필요한데
+    그것은 바로 'htmlentities' 함수를 사용하는 것이다. 해당 함수를 이용해서
+    모든 문자들을 HTML entitiy 들로 바꿔 줄 수 있다. 
+     예를 들어 (<, >) 문자가 $lt, $gt로 변하게 된다.
+    이를 통해 해킹의 위험성을 감소 시키는 것이다. */
+
+    $came_from = htmlentities($_SERVER['HTTP_REFERER']);
+
+    // htmlentities 는 superglobal 뿐만아니라 다른곳에서 유의미하다.
+
 ?>
