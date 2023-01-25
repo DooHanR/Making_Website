@@ -216,11 +216,13 @@
     변수들을 의미한다. */
 
     // 개선 이전.
-    function longdate($timestamp)
-    {
-        $temp = date("l F jS Y", $timestamp);
-        return "The date is $temp";
-    }
+    
+    // function longdate($timestamp)
+    // {
+    //     $temp = date("l F jS Y", $timestamp);
+    //     return "The date is $temp";
+    // }
+    
 
     // 개선 1단계.
     function longdate($timestamp)
