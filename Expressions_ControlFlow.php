@@ -80,4 +80,37 @@
       Equality operator는 '=='로 assign operator인 '=' 와
     헷갈리지 않도록 주의하라. */
 
+    // $month = "March"; // assign
+
+    // if ($month == "March") echo "It's spring time"; // equality
+
+    // php 에서는 자동 형변환이 자주 일어난다. 다음을 보자.
+
+    // $a = "1000";
+    // $b = "+1000"; // 둘 모두 string.
+
+    // if ($a == $b) echo "1"; // 자동 형변환이 사용된 예
+    // if ($a === $b) echo "2"; // '===' 연산자 사용으로 자동 형변환이 일어나지 않음
+
+    // if ($a != $b) echo "1";
+    // if ($a !== $b) echo "2"; // 이게 출력됨!
+
+
+    /* Comparison operators */
+
+    $a = 5; $b = 5;
+
+    if ($a > $b) echo "$a is greater than $b<br>";
+    if ($a < $b) echo "$a is less than $b<br>";
+    if ($a >= $b) echo "$a is greter than or equal to $b<br>";
+    if ($a <= $b) echo "$a is less than or equal to $b<br>";
+
+
+    /* Logical operators */
+
+
+
+
+
+
 ?>
