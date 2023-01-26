@@ -98,19 +98,32 @@
 
     /* Comparison operators */
 
-    $a = 5; $b = 5;
+    // $a = 5; $b = 5;
 
-    if ($a > $b) echo "$a is greater than $b<br>";
-    if ($a < $b) echo "$a is less than $b<br>";
-    if ($a >= $b) echo "$a is greter than or equal to $b<br>";
-    if ($a <= $b) echo "$a is less than or equal to $b<br>";
-
-
-    /* Logical operators */
+    // if ($a > $b) echo "$a is greater than $b<br>";
+    // if ($a < $b) echo "$a is less than $b<br>";
+    // if ($a >= $b) echo "$a is greter than or equal to $b<br>";
+    // if ($a <= $b) echo "$a is less than or equal to $b<br>";
 
 
+    /* Logical operators
+    'AND', 'OR', 'XOR', '!' 로 대표되는 연산자 들이다. */
 
+    // $a = 1; $b = 3;
+    // echo ($a AND $b) . "<br>";
+    // echo ($a or $b) . "<br>";
+    // echo ($a XOR $b) . "<br>";
+    // echo !$a . "<br>";
 
+    /* OR 연산자는 예상치 못한 문제를 일으킬수 있다.
+    예를 들어 A or B 일때, A가 참이면 B를 수행하지 않아서
+    문제가 발생할 수 있다. 다음의 예시를 보자 */
 
+    if ($finished == 1 OR getnext() == 1) exit; // getnext() 가 영원히 실행되지 않음
+
+    $gn = getnext(); // 미리 실행시켜놓기.
+    if ($finished == 1 OR $gn == 1) exit;
+    
+    if (getnext() == 1 OR $finsiehd == 1) // 함수를 앞으로.
 
 ?>
