@@ -128,4 +128,8 @@
 
     // echo "i really hate sincheonge<br>\n";
 
+
+    /* Conditionals (1/30) 
+     오늘은 조건문에 대해서 배운다. 지금 까지 익히 해왔던
+    'if', 'switch', '?' 에 해당하며 조건을 만족할때까지 반복하는 것도 공부해본다. */
 ?>
