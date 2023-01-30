@@ -119,11 +119,13 @@
     예를 들어 A or B 일때, A가 참이면 B를 수행하지 않아서
     문제가 발생할 수 있다. 다음의 예시를 보자 */
 
-    if ($finished == 1 OR getnext() == 1) exit; // getnext() 가 영원히 실행되지 않음
+    // if ($finished == 1 OR getnext() == 1) exit; // getnext() 가 영원히 실행되지 않음
 
-    $gn = getnext(); // 미리 실행시켜놓기.
-    if ($finished == 1 OR $gn == 1) exit;
-    
-    if (getnext() == 1 OR $finsiehd == 1) // 함수를 앞으로.
+    // $gn = getnext(); // 미리 실행시켜놓기.
+    // if ($finished == 1 OR $gn == 1) exit;
+
+    // if (getnext() == 1 OR $finsiehd == 1) exit;// 함수를 앞으로.
+
+    // echo "i really hate sincheonge<br>\n";
 
 ?>
