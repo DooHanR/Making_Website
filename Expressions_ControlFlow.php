@@ -136,6 +136,6 @@
 
     /* The if Statement */
 
-    /* php, http theory */
-
+    /* php, http theory 
+    internet, TCP/IP, http */
 ?>
