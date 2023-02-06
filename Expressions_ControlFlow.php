@@ -137,5 +137,8 @@
     /* The if Statement */
 
     /* php, http theory 
-    internet, TCP/IP, http */
+    internet, TCP/IP, http 
+    오늘도 여러 backend에 관한 문서를 읽어볼 것이다.*/
+
+
 ?>
