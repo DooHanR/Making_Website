@@ -138,7 +138,9 @@
 
     /* php, http theory 
     internet, TCP/IP, http 
-    오늘도 여러 backend에 관한 문서를 읽어볼 것이다.*/
+    오늘도 여러 backend에 관한 문서를 읽어볼 것이다.
+    
+    오늘 찾은 DeepL 이라는 번역기 성능이 아주 기똥차다. 이건뭐야! */
 
 
 ?>
