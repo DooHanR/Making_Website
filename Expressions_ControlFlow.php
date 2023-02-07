@@ -136,11 +136,7 @@
 
     /* The if Statement */
 
-    /* php, http theory 
-    internet, TCP/IP, http 
-    오늘도 여러 backend에 관한 문서를 읽어볼 것이다.
-    
-    오늘 찾은 DeepL 이라는 번역기 성능이 아주 기똥차다. 이건뭐야! */
+    /* DeepL을 통한 학습. pdf에도 사용가능하다는 점이 매우 혁명적이다!*/
 
 
 ?>
