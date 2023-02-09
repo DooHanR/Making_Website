@@ -128,14 +128,6 @@
 
     // echo "i really hate sincheonge<br>\n";
 
-
-
-    /* Conditionals (1/30) 
-     오늘은 조건문에 대해서 배운다. 지금 까지 익히 해왔던
-    'if', 'switch', '?' 에 해당하며 조건을 만족할때까지 반복하는 것도 공부해본다. */
-
-    /* The if Statement */
-
     /* DeepL을 통한 학습. pdf에도 사용가능하다는 점이 매우 혁명적이다!
     지금까지 내 자신의 영어실력이 굉장히 형편없었음을 깨닫는중. 다시
     인터넷에 대해서 읽어보고 있다. 
@@ -145,4 +137,44 @@
     */
 
 
+    /* Conditionals (1/30) 
+     오늘은 조건문에 대해서 배운다. 지금 까지 익히 해왔던
+    'if', 'switch', '?' 에 해당하며 조건을 만족할때까지 반복하는 것도 공부해본다. */
+
+    /* The if Statement 
+     php 에서의 if문은 중괄호를 사용하기도 하지만, 단일 라인에 경우는 생략이 가능하다. 
+    하지만 중괄호를 생략할 경우, 이게 if문의 구성요소 인지 헷갈릴 경우가 생기고
+    의도치 않은 버그가 생길수 있다(apple의 미허가 인증서 오류) */
+
+    if ($bank_balance < 100)
+    {
+      $money = 1000;
+      $bank_balance += $money;
+    }
+
+    /* The else Statement
+     조건문이 참이 아닐때, 메인 프로그램이 아닌 다른 동작을 하고싶을때. else문.
+    마찬가지로 내용이 적더라도 중괄호는 항상 넣도록 하자! */
+
+    if ($bank_balnace < 100)
+    {
+      $money = 1000;
+      $bank_balance += $money;
+    }
+    else
+    {
+      $savings += 50;
+      $bank_balance -= 50;
+    }
+    
+    /* The elseif Statement 
+     else 에 if문을 추가한것이다. 그냥 단순한 여러개의 조건문이라 생각하면 편하다.
+     */
+
+
+
+
+
+
+     
 ?>
