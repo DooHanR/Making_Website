@@ -171,10 +171,32 @@
      else 에 if문을 추가한것이다. 그냥 단순한 여러개의 조건문이라 생각하면 편하다.
      */
 
+    if ($bank_balnace < 100)
+    {
+      $money = 1000;
+      $bank_balance += $money;
+    }
+    elseif ($bank_balance > 200)
+    {
+      $savings += 100;
+      $bank_balance -= 100;
+    }
+    else
+    {
+      $savings += 50;
+      $bank_balance -= 50;
+    }
 
+    // 무지성 elseif 보다는 switch가 나을때도 있다 (조건이 너무 늘어날때)
 
-
-
-
-     
+    /* The switch Statement */
+    switch ($page)
+    {
+      case "Home":
+        echo "You selected home";
+        break;
+      case "About":
+        echo "You seleceted About";
+        break;
+    }
 ?>
