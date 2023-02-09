@@ -199,4 +199,12 @@
         echo "You seleceted About";
         break;
     }
+
+    /* Breaking out 
+     일반적으로 switch 에서 break를 쓰는것은 당연하다. 
+    사용하지 않을 경우 자연스레 그 밑의 것들도 실행하기 때문인데, 아주
+    흔하게 저지르는 오류중 하나이기도 하다. */
+
+    /* Default action 
+    */
 ?>
