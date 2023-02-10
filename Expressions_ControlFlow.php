@@ -137,6 +137,7 @@
     */
 
 
+
     /* Conditionals (1/30) 
      오늘은 조건문에 대해서 배운다. 지금 까지 익히 해왔던
     'if', 'switch', '?' 에 해당하며 조건을 만족할때까지 반복하는 것도 공부해본다. */
@@ -211,4 +212,35 @@
     default:
       echo "Unrecognized selection";
       break;
+
+    /* Alternative syntax 
+     switch 에서 중괄호('{}') 대신에 ':' 와 "endswitch'로 대체 가능하다.*/
+
+     switch ($page):
+      case "Home":
+        echo "You seleceted ..";
+        break;
+
+      // etc
+
+      case "Links":
+        echo "You seleceted..";
+        break;
+      endswitch; // 기존의 형태는 switch ($page) { ... }
+
+      /* The ? (or ternary) Operator 
+       삼항 연산자 '?', print에는 적용되지만 echo에는 x.
+      주어진 expression 의 True, False 값에 따라 행동을 다르게
+      정해주는 기능을 한다. 예시를 보자. */
+
+      $enought = $fuel <= 1 ? FALSE : TRUE; // 1 이상이면 True, 아니면 False.
+
+      // 그리고 '?' 연산자는 다소 헷갈리는 부분도 있다. but 익숙해져야 한다.
+
+      $saved = $saved >= $new ? $saved : $new;
+      // saved가 new보다 클때 saved가 할당, 아니면 new가 saved에 할당.
+
+
+
+      /* Looping (2/10) */
 ?>
