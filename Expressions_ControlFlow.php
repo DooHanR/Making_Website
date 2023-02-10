@@ -206,5 +206,9 @@
     흔하게 저지르는 오류중 하나이기도 하다. */
 
     /* Default action 
-    */
+     모든 경우에 해당되지 않을경우를 고려해 작성해야하는 파트.*/
+
+    default:
+      echo "Unrecognized selection";
+      break;
 ?>
