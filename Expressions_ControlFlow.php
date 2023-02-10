@@ -142,111 +142,143 @@
      오늘은 조건문에 대해서 배운다. 지금 까지 익히 해왔던
     'if', 'switch', '?' 에 해당하며 조건을 만족할때까지 반복하는 것도 공부해본다. */
 
+    
     /* The if Statement 
      php 에서의 if문은 중괄호를 사용하기도 하지만, 단일 라인에 경우는 생략이 가능하다. 
     하지만 중괄호를 생략할 경우, 이게 if문의 구성요소 인지 헷갈릴 경우가 생기고
     의도치 않은 버그가 생길수 있다(apple의 미허가 인증서 오류) */
 
-    if ($bank_balance < 100)
-    {
-      $money = 1000;
-      $bank_balance += $money;
-    }
+    // if ($bank_balance < 100)
+    // {
+    //   $money = 1000;
+    //   $bank_balance += $money;
+    // }
+
 
     /* The else Statement
      조건문이 참이 아닐때, 메인 프로그램이 아닌 다른 동작을 하고싶을때. else문.
     마찬가지로 내용이 적더라도 중괄호는 항상 넣도록 하자! */
 
-    if ($bank_balnace < 100)
-    {
-      $money = 1000;
-      $bank_balance += $money;
-    }
-    else
-    {
-      $savings += 50;
-      $bank_balance -= 50;
-    }
+    // if ($bank_balnace < 100)
+    // {
+    //   $money = 1000;
+    //   $bank_balance += $money;
+    // }
+    // else
+    // {
+    //   $savings += 50;
+    //   $bank_balance -= 50;
+    // }
     
+
     /* The elseif Statement 
      else 에 if문을 추가한것이다. 그냥 단순한 여러개의 조건문이라 생각하면 편하다.
      */
 
-    if ($bank_balnace < 100)
-    {
-      $money = 1000;
-      $bank_balance += $money;
-    }
-    elseif ($bank_balance > 200)
-    {
-      $savings += 100;
-      $bank_balance -= 100;
-    }
-    else
-    {
-      $savings += 50;
-      $bank_balance -= 50;
-    }
+    // if ($bank_balnace < 100)
+    // {
+    //   $money = 1000;
+    //   $bank_balance += $money;
+    // }
+    // elseif ($bank_balance > 200)
+    // {
+    //   $savings += 100;
+    //   $bank_balance -= 100;
+    // }
+    // else
+    // {
+    //   $savings += 50;
+    //   $bank_balance -= 50;
+    // }
 
     // 무지성 elseif 보다는 switch가 나을때도 있다 (조건이 너무 늘어날때)
 
+
     /* The switch Statement */
-    switch ($page)
-    {
-      case "Home":
-        echo "You selected home";
-        break;
-      case "About":
-        echo "You seleceted About";
-        break;
-    }
+   
+    // switch ($page)
+    // {
+    //   case "Home":
+    //     echo "You selected home";
+    //     break;
+    //   case "About":
+    //     echo "You seleceted About";
+    //     break;
+    // }
+
 
     /* Breaking out 
      일반적으로 switch 에서 break를 쓰는것은 당연하다. 
     사용하지 않을 경우 자연스레 그 밑의 것들도 실행하기 때문인데, 아주
     흔하게 저지르는 오류중 하나이기도 하다. */
 
+
     /* Default action 
      모든 경우에 해당되지 않을경우를 고려해 작성해야하는 파트.*/
 
-    default:
-      echo "Unrecognized selection";
-      break;
+    // default:
+    //   echo "Unrecognized selection";
+    //   break;
+
 
     /* Alternative syntax 
      switch 에서 중괄호('{}') 대신에 ':' 와 "endswitch'로 대체 가능하다.*/
 
-     switch ($page):
-      case "Home":
-        echo "You seleceted ..";
-        break;
+    //  switch ($page):
+    //   case "Home":
+    //     echo "You seleceted ..";
+    //     break;
 
       // etc
 
-      case "Links":
-        echo "You seleceted..";
-        break;
-      endswitch; // 기존의 형태는 switch ($page) { ... }
+      // case "Links":
+      //   echo "You seleceted..";
+      //   break;
+      // endswitch; // 기존의 형태는 switch ($page) { ... }
 
       /* The ? (or ternary) Operator 
        삼항 연산자 '?', print에는 적용되지만 echo에는 x.
       주어진 expression 의 True, False 값에 따라 행동을 다르게
       정해주는 기능을 한다. 예시를 보자. */
 
-      $enought = $fuel <= 1 ? FALSE : TRUE; // 1 이상이면 True, 아니면 False.
+      // $enought = $fuel <= 1 ? FALSE : TRUE; // 1 이상이면 True, 아니면 False.
 
       // 그리고 '?' 연산자는 다소 헷갈리는 부분도 있다. but 익숙해져야 한다.
 
-      $saved = $saved >= $new ? $saved : $new;
+      // $saved = $saved >= $new ? $saved : $new;
       // saved가 new보다 클때 saved가 할당, 아니면 new가 saved에 할당.
 
 
 
-      /* Looping (2/10) */
+      /* Looping (2/10) 
+       컴퓨터의 장점. 다른곳에서도 나온 반복문이다. */
+
+      /* While Loops */
+
+      // $fuel = 10;
+
+      // while ($fule > 1)
+      // {
+      //   echo "There's enough fuel";
+      // }
+
+      // $count = 1;
+
+      // while($count <= 12)
+      // {
+      //   echo "$count times 12 is" . $count * 12 . "<br>";
+      //   ++$count;
+      // }
+
+      // 이것보다 더 좋은 방법이 있다.
+
+      // $count = 0;
+
+      // while (++$count <= 12)
+      // {
+      //   echo "$count times 12 is " . $count * 12 . "<br>";
+      // }
 
 
-
-
-
-      
+      /* do...while Loops */
 ?>
