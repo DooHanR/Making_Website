@@ -15,9 +15,9 @@
 
     // echo date("l");
     // echo phpinfo(); // 매우 유용한 정보지만 해커에게도 유용 따라서 유의해라.
-    echo strrev(" .dlrow olleH") . "<br>"; // Reverse String
-    echo str_repeat("Hip ", 2) . "<br>"; // Repeat String
-    echo strtoupper("hooray!") . "<br>"; // String to uppercase
+    // echo strrev(" .dlrow olleH") . "<br>"; // Reverse String
+    // echo str_repeat("Hip ", 2) . "<br>"; // Repeat String
+    // echo strtoupper("hooray!") . "<br>"; // String to uppercase
     
 
     /* 5.1.1 Defining a Function 
@@ -30,6 +30,26 @@
 
 
     /* 5.1.2 Returning a Value */
+
+    $lowered = strtolower("aNY # of Letters and Punctuation you WANT<br>") . "<br>";
+    echo $lowered;
+
+    $ucfixed = ucfirst("any $ of letters and punctuation you want") . "<br>";
+    echo $ucfixed;
+  
+
+    function fix_names($n1, $n2, $n3)
+    {
+        $n1 = ucfirst(strtolower($n1));
+        $n2 = ucfirst(strtolower($n2));
+        $n3 = ucfirst(strtolower($n3));
+
+        return $n1 . " " . $n2 . " " . $n3;
+    }
+
+    echo fix_names("WILLIAM", "henry", "gatES");
+
+
 
 
     /* 5.1.3 Returning an Array */
