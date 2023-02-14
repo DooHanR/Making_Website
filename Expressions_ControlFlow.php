@@ -283,5 +283,47 @@
       /* Do...while Loops 
        while의 간소한 변형으로, 최소한 한번 실행후 이후 조건 여부로
       실행되기를 결정한다. */
-      echo "what can wo do right now?";
+      
+      // $count = 1;
+      // do {
+      //   echo "$count times 12 is " . $count * 12;
+      //   echo "<br>";
+      // }
+      // while (++$count <=12);
+
+      
+      /* for Loops 
+       루프 컨트롤 자체는 for문에서 해결하고 for문 내부에서 반복 행동을 집중하게 해준다.
+      while vs for, while 일때는 조건의 변수가 규칙적으로 변화하지 않을때. */
+
+      // for ($count = 1 ; $count <= 12 ; ++$count)
+      // {
+      //   echo "$count times 12 is " . $count * 12;
+      //   echo "<br>";
+      // }
+
+
+      /* Breaking Out of a Loop 
+      루프에 문제가 생겼을 경우 탈출하기 위한 'break', switch 에서도 본것들.
+      코드가 여러개의 레이어에 중첩되있어도 'break 2;' 와 같이 여러개의
+      레이어를 break 해낼 수 있다. */
+
+      // $fp = fopen("text.txt", 'wb');
+
+      // for($j = 0; $j < 100; ++$j)
+      // {
+      //   $written = fwrite($fp, "data");
+        
+      //   if($written == FALSE) break;
+      // }
+
+      // fclose($fp);
+
+
+      /* The continue Statement */
+
+
+
+
+
 ?>
