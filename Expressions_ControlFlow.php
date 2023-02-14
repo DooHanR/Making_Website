@@ -280,6 +280,8 @@
       // }
 
 
-      /* Do...while Loops */
+      /* Do...while Loops 
+       while의 간소한 변형으로, 최소한 한번 실행후 이후 조건 여부로
+      실행되기를 결정한다. */
       echo "what can wo do right now?";
 ?>
