@@ -116,22 +116,34 @@
     반복 호출에도 값이 유지되는 변수. */
 
 
-    
+
     /* 5.2 Including and Requiring Files 
      php 에서는 자주 사용되는 함수들을 따로 별도의 파일에 저장하거나
     혹은 불러 올 수 있는데 바로 'Include' 와 'Require' 이다. */
   
 
-    /* 5.2.1 The include Statement */
+    /* 5.2.1 The include Statement 
+     'include' 명령어를 통해 특정 파일과 그 내용을 가져오도록 할 수 있다.*/
+
+    //  include "library.php"; 
     
 
-    /* 5.2.2 Using include_once */
+    /* 5.2.2 Using include_once 
+     include 과정에 여러번 포함하게 되면 오류가 생기게 된다. 
+    따라서 그것을 막기위해 'include_once'를 사용해 한번만 include하게 하는것이다.
+    이 경우 추후에 include, include_once가 와도 자연스럽게 무시한다. */
   
-
-    /* 5.2.3 Using require and require_once */
-
+    // include_once "library.php";
 
 
+    /* 5.2.3 Using require and require_once 
+     앞서 include의 문제점은 요청후, 파일이 들어왔든 안왔든 프로그램이 실행된다. 
+    반면에 require, require_once는 반드시 파일이 들어온 후에 프로그램이 실행되므로
+    혹시나 예상치 못한 문제를 예방할 수 있다. */
+
+    // require_once "library.php";
+
+    
     /* 5.3 PHP Version Compatibility */
   
 
