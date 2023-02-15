@@ -31,59 +31,155 @@
 
     /* 5.1.2 Returning a Value */
 
-    $lowered = strtolower("aNY # of Letters and Punctuation you WANT<br>") . "<br>";
-    echo $lowered;
+    // $lowered = strtolower("aNY # of Letters and Punctuation you WANT<br>") . "<br>";
+    // echo $lowered;
 
-    $ucfixed = ucfirst("any $ of letters and punctuation you want") . "<br>";
-    echo $ucfixed;
+    // $ucfixed = ucfirst("any $ of letters and punctuation you want") . "<br>";
+    // echo $ucfixed;
   
+    // function fix_names($n1, $n2, $n3)
+    // {
+    //     $n1 = ucfirst(strtolower($n1));
+    //     $n2 = ucfirst(strtolower($n2));
+    //     $n3 = ucfirst(strtolower($n3));
 
-    function fix_names($n1, $n2, $n3)
-    {
-        $n1 = ucfirst(strtolower($n1));
-        $n2 = ucfirst(strtolower($n2));
-        $n3 = ucfirst(strtolower($n3));
+    //     return $n1 . " " . $n2 . " " . $n3;
+    // }
 
-        return $n1 . " " . $n2 . " " . $n3;
-    }
-
-    echo fix_names("WILLIAM", "henry", "gatES");
-
-
+    // echo fix_names("WILLIAM", "henry", "gatES");
 
 
     /* 5.1.3 Returning an Array */
+
+    // function fix_names($n1, $n2, $n3)
+    // {
+    //     $n1 = ucfirst(strtolower($n1));
+    //     $n2 = ucfirst(strtolower($n2));
+    //     $n3 = ucfirst(strtolower($n3));
+
+    //     return array($n1, $n2, $n3);
+    // }
+
+    // $names = fix_names("WILLIAM", "henry", "gatEs");
+    // echo $names[0] . " " . $names[1] . " " . $names[2];
+  
     
+    /* 5.1.4 Passing Arguments by Reference 
+     참조 방식은 변수를 '실'에 연결시키고 실의 끝을 함수에 연결하는 것과 같다. 
+    실을통해 함수는 변수에 접근하는 것이다. 그리고 이를 통해 함수가
+    변수의 값을 변경시킬 수 있는 것이다. */
+
+    // $a1 = "WILLIAM";
+    // $a2 = "henry";
+    // $a3 = "gatES";
+
+    // echo $a1 . " " . $a2 . " " . $a3 . "<br>";
+    // fix_names($a1, $a2, $a3);
+    // echo $a1 . " " . $a2 . " " . $a3; // 원본이 변경되었음을 알 수 있다.
     
+    // function fix_names(&$n1, &$n2, &$n3) // 참조로 매개변수 주기.
+    // {
+    //     $n1 = ucfirst(strtolower($n1));
+    //     $n2 = ucfirst(strtolower($n2));
+    //     $n3 = ucfirst(strtolower($n3));
+    // }
+
+
+    /* 5.1.5 Returning Global Variables 
+     전역 변수. 모든 코드 내에서 접근 가능한 변수.
+    참조로 주지 않아도 값이 변경되는 것을 볼 수 있다. 
+    하지만 전역변수는 최대한 사용을 자제하는게 좋겠지? */
+
+    // $a1 = "WILLIAM";
+    // $a2 = "henry";
+    // $a3 = "gatES";
+
+    // echo $a1 . " " . $a2 . " " . $a3 . "<br>";
+    // fix_names($a1, $a2, $a3);
+    // echo $a1 . " " . $a2 . " " . $a3; // 원본이 변경되었음을 알 수 있다.
     
-    /* 5.1.4 Passing Arguments by Reference */
+    // function fix_names()
+    // {
+    //     global $a1; $a1 = ucfirst(strtolower($n1));
+    //     global $a2; $a2 = ucfirst(strtolower($n2));
+    //     global $a3; $a3 = ucfirst(strtolower($n3));
+    // }
 
 
-    /* 5.1.5 Returning Global Variables */
+    /* 5.1.6 Recap of Variable Scope 
+     변수의 종류는 세가지가 있다. 
+     1. 지역 변수 : 정의된 곳에서만 사용 가능 한 것.
+     
+     2. 전역 변수 : 모든 곳에서 사용 가능 한 것.
+
+     3. 정적 변수 : 선언된 함수 내에서만 사용가능하지만 여러번의
+    반복 호출에도 값이 유지되는 변수. */
 
 
-    /* 5.1.6 Recap of Variable Scope */
-
-
-
-    /* 5.2 Including and Requiring Files */
+    
+    /* 5.2 Including and Requiring Files 
+     php 에서는 자주 사용되는 함수들을 따로 별도의 파일에 저장하거나
+    혹은 불러 올 수 있는데 바로 'Include' 와 'Require' 이다. */
   
 
-    /* 5.2.1 */
-  
+    /* 5.2.1 The include Statement */
+    
+
+    /* 5.2.2 Using include_once */
   
 
-    /* 5.3 PHP Version Compatibility*/
-  
+    /* 5.2.3 Using require and require_once */
 
-    /* 5.3.1 */
+
+
+    /* 5.3 PHP Version Compatibility */
   
 
 
     /* 5.4 PHP Objects*/
 
 
-    /* 5.4.1 */
+    /* 5.4.1 Terminology */
+
+
+    /* 5.4.2 Declaring a Class */
+
+
+    /* 5.4.3 Creating an Obejct */
+
+
+    /* 5.4.4 Accessing Objects */
+
+
+    /* 5.4.5 Cloning Objects */
+
+
+    /* 5.4.6 Constructors */
+
+
+    /* 5.4.7 Destructors */
+
+
+    /* 5.4.8 Writing Methods */
+
+
+    /* 5.4.9 Declaring Properties */
+
+
+    /* 5.4.10 Declaring Constants*/
+    
+
+    /* 5.4.11 Property and Method Scope*/
+    
+
+    /* 5.4.12 Statice Methods */
+    
+
+    /* 5.4.13 Static Properties */
+    
+
+    /* 5.4.14 Inheritance*/
+
 
 
 ?>
