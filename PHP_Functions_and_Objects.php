@@ -273,13 +273,13 @@
     다른값으로 초기화하기. class 내부에 __construct() 라는 생성자를
     만들어 주면된다. 에제를 한번 보자. */
 
-    class User
-    {
-        function __construct($param1, $param2)
-        {
-            // Constructor instructor.
-        }
-    }
+    // class User
+    // {
+    //     function __construct($param1, $param2)
+    //     {
+    //         // Constructor instructor.
+    //     }
+    // }
 
 
     /* 5.4.7 Destructors 
@@ -287,16 +287,35 @@
     해제 할 수 있다. 이렇게 해제해주지 않으면 계속 차지 하기 때문에
     소멸자로 꼭 연결을 해지해주는게 좋다. */
 
+    // class User
+    // {
+    //     function __destruct()
+    //     {
+    //         // Destructor goes here
+    //     }
+    // }
+
+
+    /* 5.4.8 Writing Methods 
+     Method(클래스 내 function) 작성시 유의 사항. 
+    - (__)로 시작해서는 안됨. ex)'__construct'
+    - '$this' 라는 특별한 변수를 통해
+    현재 object의 property에 접근가능. */
+
     class User
     {
-        function __destruct()
+        public $name, $password;
+
+        function get_password()
         {
-            // Destructor goes here
+            return $this->password;
         }
     }
 
-    
-    /* 5.4.8 Writing Methods */
+    $object = new User;
+    $object->password = "secret";
+
+    echo $object->get_password();
 
 
     /* 5.4.9 Declaring Properties */
