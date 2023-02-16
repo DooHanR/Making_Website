@@ -143,22 +143,21 @@
 
     // require_once "library.php";
 
-    
+
 
     /* 5.3 PHP Version Compatibility 
      php 는 많은 버전이 있고, 버전에 따라 사용가능한 function 들도 다르기 때문에
     'function_exists' 함수를 통해 확인해볼 수 있다. */
   
-    if (function_exists("array_combine"))
-    {
-        echo "Function exists<br>";
-        echo "php version : " . phpversion();
-    }
-    else
-    {
-        echo "Function does not exist - really it is";
-    }
-
+    // if (function_exists("array_combine"))
+    // {
+    //     echo "Function exists<br>";
+    //     echo "php version : " . phpversion();
+    // }
+    // else
+    // {
+    //     echo "Function does not exist - really it is";
+    // }
 
 
     /* 5.4 PHP Objects*/
