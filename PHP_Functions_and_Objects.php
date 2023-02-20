@@ -318,8 +318,29 @@
     // echo $object->get_password();
 
 
-    /* 5.4.9 Declaring Properties */
+    /* 5.4.9 Declaring Properties 
+     PHP 에서는 반드시 class 내부의 property를 명시하지 않아도 암시적으로
+    생성되곤 한다. 다음의 예시를 보면 알 수 있다. 
+     하지만 이와 같이 암시적으로 될 경우 의도치 않은 버그가 생길 수 있으며 
+    그렇기 떄문에 권장하지 않는다. 항상 명시적으로 property를 선언해주도록 해라.*/
 
+    // $object1 = new User;
+    // $object1->name = "Doo";
+
+    // echo $object1->name;
+
+    // class User {}
+
+    /* 유효한 할당과 유효하지 않은 할당들.
+     property 로 유효한것은 상수이여야 한다. 표현식, 함수는 허락되지않음. */
+
+    // class Test
+    // {
+    //     public $name = "Paul Smith"; // 유효
+    //     public $age = 42; // 유효
+    //     public $time = time(); // 유효x, 함수
+    //     public $score = $level * 2; // 유효x, 표현식 사용
+    // }
 
     /* 5.4.10 Declaring Constants*/
     
