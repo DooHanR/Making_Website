@@ -302,20 +302,20 @@
     - '$this' 라는 특별한 변수를 통해
     현재 object의 property에 접근가능. */
 
-    class User
-    {
-        public $name, $password;
+    // class User
+    // {
+    //     public $name, $password;
 
-        function get_password()
-        {
-            return $this->password;
-        }
-    }
+    //     function get_password()
+    //     {
+    //         return $this->password;
+    //     }
+    // }
 
-    $object = new User;
-    $object->password = "secret";
+    // $object = new User;
+    // $object->password = "secret";
 
-    echo $object->get_password();
+    // echo $object->get_password();
 
 
     /* 5.4.9 Declaring Properties */
