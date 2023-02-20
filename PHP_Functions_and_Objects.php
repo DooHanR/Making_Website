@@ -342,19 +342,208 @@
     //     public $score = $level * 2; // 유효x, 표현식 사용
     // }
 
-    /* 5.4.10 Declaring Constants*/
-    
 
-    /* 5.4.11 Property and Method Scope*/
+    /* 5.4.10 Declaring Constants 
+     define 함수로 전역 상수를 만들어내는 것처럼 클래스 내부에
+    상수를 정의할 수 있다. 
+     그리고 여기서 self, 와 '::' 연산자를 사용해 object를 사용하지않고
+    내부함수를 바로 호출하는 모습을 볼 수 있다. 상수는 변하지 않는것에 주의해라. */
     
+    // Translate::lookup(); // 객체 없이 클래스내의 함수 호출.
 
-    /* 5.4.12 Statice Methods */
+    // class Translate
+    // {
+    //     const ENGLISH = 0;
+    //     const SPANISH = 1;
+    //     const FRENCH = 2;
+    //     const GERMAN = 3;
+
+    //     static function lookup()
+    //     {
+    //         echo self::SPANISH;
+    //     }
+    // }
+
+
+    /* 5.4.11 Property and Method Scope 
+     php 에서도 마찬가지로 property와 method의 범위를 지정하는 세가지 키워드가 있다. 
+    1. public, 2. protected, 3. private 이다. 
+     1. public(var) : var, public으로 정의 되었을 경우. method는 default로 public이다. 
+    어디에서든 참조 할 수 있다. 
+     2. protected
+    오직 object의 클래스와 subclass 에서만 참조 가능하다. 
+     3. private
+    오직 동일 클래스의 method 에서만 접근가능하며, subclass 조차 접근이 불가능. */
     
+    // class Example
+    // {
+    //     var $name = "Michael";
+    //     public $age = 23;
+    //     protected $usercount;
 
-    /* 5.4.13 Static Properties */
+    //     private function admin()
+    //     {
+    //         // admin code.
+    //     }
+    // }
+
+
+    /* 5.4.12 Static Methods 
+     object 가 아닌 class 에서 호출되는 static method. 
+    static method는 어느 object property에도 접근 할 수 없다는데, 예시를 보자.
+    클래스 자체에 관한 행동을 할때 유용하며, '->'가 아닌 '::'를 사용함에 주의하라. */
     
+    // class User
+    // {
+    //     static function pwd_string()
+    //     {
+    //         echo "Please enter your password : ";
+    //     }
+    // }
 
-    /* 5.4.14 Inheritance*/
+    // User::pwd_string(); // '::'를 이용해 접근하는것 '->'는 사용시 error 발생.
+
+
+    /* 5.4.13 Static Properties 
+     object 별로 나눠 관리 하는게 아닌 ex)유저간 비밀번호, 생성시점
+    class 가 모두 공유하는 property, method 는 static 의 형태로 사용됩니다. ex)전체 유저수
+    또한 static의 경우 object 없이도 접근이 가능합니다. 
+    static property의 경우에는 불가, static method는 
+    클래스 내에서 정적속성, 상수에 액세스 하기위해서 self 키워드를 사용한다. */
+    
+    // $temp = new Test();
+
+    // echo "Test A: " . Test::$static_property . "<br>";
+    // echo "Test B: " . $temp->get_sp() . "<br>";
+    // echo "Test C: " . $temp->static_property . "<br>"; // 출력 안됨.
+
+    // class Test
+    // {
+    //     static $static_property = "I'm static";
+
+    //     function get_sp()
+    //     {
+    //         return self::$static_property; // 예시.
+    //     }
+    // }
+
+
+    /* 5.4.14 Inheritance 
+     클래스를 재사용하기 위해 기존의 클래스에서 'extends' 키워드를 이용해 
+    서브클래스를 생성해 사용하는 것. 코드 재작성하는 수고를 줄일 수 있다. */
+
+    // $object = new Subscriber;
+    // $object->name = "Fred";
+    // $object->password = "pword";
+    // $object->phone = "012 212 2222";
+    // $object->email = "fred@blog.com";
+    // $object->display();
+
+    // class User
+    // {
+    //     public $name, $password;
+
+    //     function save_user()
+    //     {
+    //         echo "Save User code here";
+    //     }      
+    // }
+
+    // class Subscriber extends User
+    // {
+    //     public $phone, $emil;
+
+    //     function display()
+    //     {
+    //         echo "Name: " . $this->name . "<br>";
+    //         echo "Pass: " . $this->password . "<br>";
+    //         echo "Phone: " . $this->phone . "<br>";
+    //         echo "Email: " . $this->email . "<br>";
+    //     }
+    // }
+
+
+    /* 5.4.14.1 The parent keyword 
+     서브클래스에 기존클래스와 똑같은 method가 있을경우, override 되서 해당 method
+    가 작동된다. 하지만 기존클래스의 method가 쓰고싶을때가 있는데 'parent' 연산자를
+    사용하면 된다. */
+
+    // $object = new Son;
+    // $object->test();
+    // $object->test2();
+
+    // class Dad
+    // {
+    //     function test()
+    //     {
+    //         echo "[Class Dad] I am your Father<br>";
+    //     }
+    // }
+
+    // class Son extends Dad
+    // {
+    //     function test()
+    //     {
+    //         echo "[Class Son] I am Luke<br>";
+    //     }
+
+    //     function test2()
+    //     {
+    //         parent::test(); // self::method(); -> 현재클래스의 method 호출시.
+    //     }
+    // }
+
+
+    /* 5.4.14.2 Subclass constructors
+     서브클래스의 생성자를 선언할때, php는 부모 클래스의 생성자까지는 자동 호출해주지 않는다. 
+    따라서 부모 클래스도 initialization 되기 원한다면, 하위 클래스에서 부모 생성자를
+    호출해줘야 한다. */
+
+    // $object = new Tiger();
+
+    // echo "Tigers have...<br>";
+    // echo "Fur: " . $object->fur . "<br>";
+    // echo "Stripes: " . $object->stripes;
+
+    // class Wildcat
+    // {
+    //     public $fur;
+
+    //     function __construct()
+    //     {
+    //         $this->fur = "TRUE";
+    //     }
+    // }
+
+    // class Tiger extends Wildcat
+    // {
+    //     public $stripes;
+
+    //     function __construct()
+    //     {
+    //         parent::__construct();
+    //         $this->stripes = "TRUE";
+    //     }
+    // }
+
+
+    /* 5.4.14.3 Final methods 
+    서브클래스가 상위클래스의 methd를 oveerride 하는게 싫다면 final keyword를 사용하자. */
+
+    // class User
+    // {
+    //     final function copyright()
+    //     {
+    //         echo "This class was written by Joe smith";
+    //     }
+    // }
+
+
+
+
+
+
+
 
 
 
