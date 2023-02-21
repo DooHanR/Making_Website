@@ -1,7 +1,7 @@
 <?php
     /* 6. PHP Arrays */
     
-    echo "Hello. this pag is for studying PHP Arrays. <br><br>";
+    echo "Hello. this page is for studying PHP Arrays. Good to see you.<br><br>";
 
     /* 6.1 Basic Access */
     /* 6.1.1 Numerically indexed Arrays */
