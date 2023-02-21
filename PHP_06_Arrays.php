@@ -1,5 +1,7 @@
 <?php
-    /* 6. PHP Arrays */
+    /* 6. PHP Arrays 
+     여기서는 이제부터 PHP 에서의 배열에 대한 본격적인 공부를 하게 될 것. 
+    이전의 C언어와는 다르게 그 성능이 뛰어난 거 같다. */
     
     echo "Hello. this page is for studying PHP Arrays. Good to see you.<br><br>";
 
