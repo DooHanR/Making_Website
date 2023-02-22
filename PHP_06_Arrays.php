@@ -154,24 +154,120 @@
     /* 6.3 Multidimensional Arrays 
      php 에서도 마찬가지로 다차수 배열이 가능하다! */
 
-    $products = array (
-        'paper' => array(
-            'copier' => "Copier & Multipurpose",
-            ''
-        )
-    )
+    /* 이 예시는 연관 배열을 이용한것으로 배열안에 배열을 만들어낸 모습이다. 
+    그후 foreach 문을 반복적으로 사용해서 출력한다. 
+    echo $products['misc']['glue]; 와 같은 방식으로 특정 내용을 뽑아낼 수 있음.*/
+
+    // $products = array (
+    //     'paper' => array(
+    //         'copier' => "Copier & Multipurpose",
+    //         'inkjet' => "Inkjet Printer",
+    //         'laser' => "Laser printer",
+    //         'photo' => "Photographic Paper"),
+
+    //     'pens' => array(
+    //         'ball' => "Ball point",
+    //         'hilite' => "Hightlighters",
+    //         'marker' => "Markers"),
+
+
+    //     'misc' => array(
+    //         'tape' => "Sticky Tape",
+    //         'glue' => "Adhensives",
+    //         'clips' => "Paperclips")
+    //     );
+
+    //     echo "<pre>";
+
+    //     foreach($products as $section => $itmes)
+    //         foreach($itmes as $key => $value)
+    //             echo "$section:\t$key\t($value)<br>";
+
+    //     echo "</pre>";
+
+        /* Creating a multidimensional numeric array 
+        출력 결과를 예상하고 어떻게 작동하는지 잘 파악해둬라. */
+
+        // $chessboard = array(
+        //     array('r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'),
+        //     array('p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'),
+        //     array(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+        //     array(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+        //     array(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+        //     array(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+        //     array('P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'),
+        //     array('R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R')
+        //   );
+        
+        //   echo "<pre>";
+        
+        //   foreach($chessboard as $row)
+        //   {
+        //     foreach ($row as $piece)
+        //       echo "$piece ";
+        
+        //     echo "<br>";
+        //   }
+        
+        //   echo "</pre>";
 
 
 
-    /* 6.4 Using array Functions */
-    /* 6.4.1 is_array */
-    /* 6.4.2 count */
-    /* 6.4.3 sort */
-    /* 6.4.4 shuffle */
+    /* 6.4 Using array Functions 
+     array function 에는 다양한 종류가 있고, 앞서 봤던 'list', 'each'가 그에 해당한다. 
+    하지만 그중에서도 특히 중요한것들을 다뤄볼 필요가 있다! */
+
+
+    /* 6.4.1 is_array 
+     배열과 변수가 똑같이 '$'를 사용하기 때문에 구별할 필요가 있다. 
+    그래서 'is_array' 함수를 사용하면 알 수 있음. */
+
+    echo (is_array($fred)) ? "Is an array" : "Is not an array";
+
+
+    /* 6.4.2 count 
+    'each', 'foreach..as' 로 배열의 내용을 파악할 수 있긴 하지만
+    정확한 수를 알야아 할떄는 'count' 함수를 이용해야 한다. 
+    또한 재귀 함수에서도 사용가능한데, 두번째 인자가 추가되어
+    '0' 일때는 최상위 레벨만, '1' 모든 하위 배열에 대해서 시행한다. */
+
+    // echo count($fred);
+    // echo count($fred, 1);
+
+
+    /* 6.4.3 sort 
+     php 에서의 정렬은 단순히 정렬된 새로운 배열을 만들어 내는게 아니라
+    제공받은 배열에 대해 작동한다는 점에 주의 하십시오.
+     또한 단순 정렬뿐만 아니라 두번째 인자로 무엇을 넣느냐에 따라 숫자나
+    알파벳 순으로 정렬 할 수도 있습니다.
+     그리고 성공시 TRUE, 실패시 ERROR를 반환한다는 점도 알아두십시오. */
+
+    // sort($fred, SORT_NUMERIC);
+    // sort($fred, SORT_STRING);
+    // rsort($fred, SORT_NUMERIC); // 역순
+    // rsort($fred, SORT_STRING); // 역순
+
+
+    /* 6.4.4 shuffle 
+     마구잡이로 섞을때 필요합니다. 정렬과 마찬가지로 제공된 배열에 대해
+    작업을 합니다. */
+
+    // shuffle($cards);
+    echo "shin min jung";
+
+
     /* 6.4.5 explode */
+
+
     /* 6.4.6 extract */
+
+
     /* 6.4.7 Using compact */
+
+
     /* 6.4.8 rest */
+
+
     /* 6.4.9 end */
 
 ?>
