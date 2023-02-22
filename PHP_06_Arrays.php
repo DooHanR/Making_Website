@@ -7,6 +7,7 @@
     echo "Hello. this page is for studying PHP Arrays. Good to see you.<br><br>";
 
 
+
     /* 6.1 Basic Access 
      배열은 이어붙인 성냥갑, 이어진 여러개의 구슬처럼 생각할 수 있다. 
     여기서 성냥갑, 구슬은 숫자, 문자열, 또다른 배열이 될 수 있다.
@@ -96,6 +97,7 @@
     이는 'key=>value' 형식이다. */
 
 
+
     /* 6.2 The foreach...as Loop 
      php 개발자가 더 편하게 사용하기 위해 만든 'foreach.. as' loop가 있다. 
     이 루프는 배열 내의 모든 요소를 한번에 하나씩 훑어보며 무언가를 수행할 수 있다.
@@ -149,7 +151,15 @@
     // secho "a=$a, b=$b;"
 
 
-    /* 6.3 Multidimensional Arrays */
+    /* 6.3 Multidimensional Arrays 
+     php 에서도 마찬가지로 다차수 배열이 가능하다! */
+
+    $products = array (
+        'paper' => array(
+            'copier' => "Copier & Multipurpose",
+            ''
+        )
+    )
 
 
 
