@@ -222,7 +222,7 @@
      배열과 변수가 똑같이 '$'를 사용하기 때문에 구별할 필요가 있다. 
     그래서 'is_array' 함수를 사용하면 알 수 있음. */
 
-    echo (is_array($fred)) ? "Is an array" : "Is not an array";
+    // echo (is_array($fred)) ? "Is an array<br>" : "Is not an array<br>";
 
 
     /* 6.4.2 count 
@@ -253,12 +253,19 @@
     작업을 합니다. */
 
     // shuffle($cards);
-    echo "shin min jung";
 
 
-    /* 6.4.5 explode */
+    /* 6.4.5 explode 
+     특정 문자열을 문자를 기준으로 여러개의 배열에 나눌 수 있는 기능. 마치
+    폭탄으로 폭팔 시켜서 이리저리 흩어지게 하는 것과 같다. */
 
+    $temp = explode(' ', "This is a sentence with seven words");
+    print_r($temp);
 
+    $temp = explode('***', "A***sentence***with***asterisks");
+    print_r($temp);
+
+    
     /* 6.4.6 extract */
 
 
