@@ -259,11 +259,11 @@
      특정 문자열을 문자를 기준으로 여러개의 배열에 나눌 수 있는 기능. 마치
     폭탄으로 폭팔 시켜서 이리저리 흩어지게 하는 것과 같다. */
 
-    $temp = explode(' ', "This is a sentence with seven words");
-    print_r($temp);
+    // $temp = explode(' ', "This is a sentence with seven words<br>");
+    // print_r($temp);
 
-    $temp = explode('***', "A***sentence***with***asterisks");
-    print_r($temp);
+    // $temp = explode('***', "A***sentence***with***asterisks<br>");
+    // print_r($temp);
 
     
     /* 6.4.6 extract 
@@ -275,25 +275,54 @@
     그렇게 연관배열로 배치된 값을 나중에 사용하기 위해 변수로
     바꿔서 저장하고싶을때가 있는데, 이때 extract를 사용하는 것이다. */
 
-    extract($_GET); // 연관배열 $_GET를 변수로 변경.
+    /* $a[x] = 111, $a[y];,  extract(a); -> x = 111; y = 222 */
+
+    // extract($_GET); // 연관배열 $_GET를 변수로 변경.
 
     /* 이렇게하면 'q' 라는 새변수가 생기고 해당 변수에 값이 할당되는데
     중복되는 이름이 있을 경우 덮어 쓰게 된다. 따라서 이와 같은
     경우를 피하기 위해 다음과 같은 매개변수를 추가하면 된다. */
 
-    extract($_GET, EXTR_PREFIX_ALL, 'fromget'); // '$q'->'$fromget_g'
+    // extract($_GET, EXTR_PREFIX_ALL, 'fromget'); // '$q'->'$fromget_g'
 
     /* 의도적으로 중복되는 키를 제출해서 웹사이트를 망칠 수 있으므로
     다음과 같이 매개변수를 추가한 extract를 사용하는게 좋을것이다. */
 
 
-    /* 6.4.7 Using compact */
+    /* 6.4.7 Using compact 
+     기존에 'extract' 가 배열을 통해 변수와 값을 만들어내는 것이였다면
+    'compact' 는 변수, 값을 통해 배열을 만들어 낸다.*/
 
+    // $fname = "Doctor";
+    // $sname = "Who";
+    // $planet = "Gallifrey";
+    // $system = "Gridlock";
+    // $constellation = "Kasterborous";
 
-    /* 6.4.8 rest */
+    // $contact = compact('fname', 'sname', 'planet', 'system', 'constellation');
+
+    // print_r($contact);
+
+    /* 디버깅 할때도 유용하게 쓸 수 있다. 각 변수와 변수의 값을 알고싶을때. */
+
+    // $j = 23;
+    // $temp = "Hello";
+    // $address = "1 Old Street";
+    // $age = 61;
+
+    // print_r(compact(explode(' ', "j temp address age")));
+
+    /* 6.4.8 reset 
+     'reset' 함수는 배열의 포인터를 맨처음으로 이동시키고 그 값을 반환합니다. */
+
+    //  reset($fred);
+    //  $item = reset($fred); // item 의 배열내 첫번째 element를 반환.
 
 
     /* 6.4.9 end 
-     */
+      'end' 함수는 내부 배열 포인터를 마지막으로 옮기고 element 를 return 함. */
+
+    // end($fred);
+    // $item = end($fred);
 
 ?>
