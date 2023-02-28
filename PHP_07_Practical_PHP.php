@@ -81,7 +81,11 @@
 
     echo time(); // 그때부터 지금까지 흐른 초?
 
+    // 주어진 날짜에 대한 timestamp 구하기.
 
+    echo mktime(0, 0, 0, 12, 1, 2022); // 시, 분, 초, 월, 일, 년도
+
+    
     /* 7.2.1 Date Constants */
 
 
