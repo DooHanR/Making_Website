@@ -15,15 +15,36 @@
 
     /* 적절한 '%' symbol 과 양식을 잘 맞춘다면 뭐든 출력 가능하다. */
 
-    printf("My name is %s. I'm %d years old, which is %X in hexadecimal<br>",
-           'Simon', 33, 33);
+    // printf("My name is %s. I'm %d years old, which is %X in hexadecimal<br>",
+    //        'Simon', 33, 33);
 
     /* printf 로 색 부여하기. */
 
-    printf("<span style='color:#%X%X%X'>Hello<br></span>", 65, 127, 245);
+    // printf("<span style='color:#%X%X%X'>Hello<br></span>", 65, 127, 245);
 
 
-    /* 7.1.1 Precision Setting */
+    /* 7.1.1 Precision Setting 
+     '정밀도 설정', 123.32 / 12 와 같이 정수로 딱 나뉘어 지지 않는 연산의 경우에서 
+    소수점 몇번째 자리까지 표기할 것인지를 설정하는 것이다. */
+
+    printf("The result is: $%.2f\n<br>", 123.42 / 12);
+
+    /* 몇가지 예시가 있다. */
+
+    // Pad to 15 spaces
+    printf("The result is $%15f\n<br>", 123.32 / 12);
+
+    // Pad to 15 spaces, fill with zeros
+    printf("The result is $%015f\n<br>", 123.42 / 12);
+
+    // Pad to 15 spaces, 2 decimal places precision
+    printf("The result is $%15.2f\n<br>", 123.42/ 12);
+
+    // Pad to 15 spaces, 2 decimal places precision, fill with zeros
+    printf("Thre reuslt is $%015.2f\n<br>", 123.42 / 12);
+
+    // Pad to 15 spaces, 2 decimal places precision, fill with $ symbol
+    printf("The result is $%'#15.2f\n", 123.42 / 12);
 
 
     /* 7.1.2 String Padding */
