@@ -91,20 +91,50 @@
      date() 명령어와 함께 특정한 형식으로 날짜를 return 하기 위한 몇몇 상수들이 있다. 
     'DATE_ATOM', 'DATE_COOKIE', 'DATE_RSS', 'DATE_W3C' 등이 해당된다. */
 
-    echo date(DATE_ATIM);
+    echo date(DATE_ATOM) . "<br>";
+    echo date(DATE_COOKIE) . "<br>";
+    echo date(DATE_RSS) . "<br>";
+    echo date(DATE_W3C) . "<br>";
+
+    /* https://tinyurl.com/phpdatetime 에 완전한 list가 있으니 참고 바람. */
+
+    
+    /* 7.2.2 Using Checkdate 
+     사용자가 유효한 날짜를 제출했는지를 확인하는 법. checkdate() 함수 사용하면 됨. 
+    유효할때 TRUE, 그렇지 않으면 FASLE 리턴. 예를들어 어느년도의 9월 31일은 항상 FALSE.*/
+
+    $month = 9;
+    $day = 31;
+    $year = 2025;
+
+    if(checkdate($month, $day, $year))
+        echo "Date is valid<br>";
+    else
+        echo "Date is not vaild, or invalid<br>";
 
 
-    /* 7.2.2 Using Checkdate */
+
+    /* 7.3 File Handling
+     MySQL 에만 모든 데이터를 저장하고, 가공할 순 없으며 때때로 
+    로컬에서 데이터를 처리하거나 저장, 가공 해야할 때가 있습니다. 
+     그럴때 이렇게 직접 php에서 파일을 다루는게 도움이 되는데
+    한가지 주의 할점은 대소문자 구별법이 모두 다르기 때문에
+    항상 소문자 filename 으로 작성하는게 좋습니다. */
 
 
+    /* 7.3.1 Checking Whetere a File exists 
+     file_exists() 함수로 파일의 존재 여부 확인하기. */
 
-    /* 7.3 File Handling */
+    if (file_exists("testfile.txt"))
+        echo "File exists";
+    else
+        echo "파일이 없어용.";
 
 
-    /* 7.3.1 Checking Whetere a File exists*/
+    /* 7.3.2 Creating a File 
+     존재하지 않는 파일 만들기. */
 
-
-    /* 7.3.2 Creating a File */
+    
 
 
     /* 7.3.3 Reading from Files */
