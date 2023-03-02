@@ -79,14 +79,19 @@
     /* 7.2 Date and Time Functions 
      PHP 에서는 Unix timestamp를 사용한다. 그러니까 1970년 1월 1일부터 카운트하는 그거.*/
 
-    echo time(); // 그때부터 지금까지 흐른 초?
+    // echo time(); // 그때부터 지금까지 흐른 초?
 
     // 주어진 날짜에 대한 timestamp 구하기.
+    // echo mktime(0, 0, 0, 12, 1, 2022); // 시, 분, 초, 월, 일, 년도
 
-    echo mktime(0, 0, 0, 12, 1, 2022); // 시, 분, 초, 월, 일, 년도
+    // echo date("l F jS, Y - g:ia", time());
 
     
-    /* 7.2.1 Date Constants */
+    /* 7.2.1 Date Constants
+     date() 명령어와 함께 특정한 형식으로 날짜를 return 하기 위한 몇몇 상수들이 있다. 
+    'DATE_ATOM', 'DATE_COOKIE', 'DATE_RSS', 'DATE_W3C' 등이 해당된다. */
+
+    echo date(DATE_ATIM);
 
 
     /* 7.2.2 Using Checkdate */
