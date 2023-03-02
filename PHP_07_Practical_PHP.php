@@ -132,30 +132,80 @@
 
 
     /* 7.3.2 Creating a File 
-     존재하지 않는 파일 만들기. */
+     존재하지 않는 파일 만들기. 
+    die 호출시에 프로그램 종료와 동시에 자동으로 파일을 닫는다. */
 
-    $fh = fopen("testfile.txt", 'w') or die("Failed to create file");
-    $text = <<<_END
-    LINE 1
-    LINE 2
-    LINE 3
-    _END;
+    // $fh = fopen("testfile.txt", 'w') or die("Failed to create file");
+    // $text = <<<_END
+    // LINE 1
+    // LINE 2
+    // LINE 3
+    // _END;
 
-    fwrite($fh, $text) or die("Coult not write to file");
-    fclose($fh);
-    echo "File 'testfile.txt' written successfully"; 
+    // fwrite($fh, $text) or die("Coult not write to file");
+    // fclose($fh);
+    // echo "File 'testfile.txt' written successfully<br>"; 
+
+    /* fopen mode 와도 관련 된 것은
+    'r' : 파일 시작점에서 부터 읽기. 존재하지 않을경우 FALSE.
+    'r+' : 파일 읽고 쓰기. 존재하지 않을 경우 FALSE.
+    'w' : 파일에 읽기. 존재하지 않을 경우 생성.
+    'w+' : 파읽 읽고 쓰기. 존재하지 않을 경우 생성.
+    'a' : 파일 쓰기. 파일의 끝에서부터 씀. 없을 경우 생성. 
+    'a+' : 파일 읽고 쓰기. 파일의 끝에서 부터, 없을 경우 생성. */
 
 
-    /* 7.3.3 Reading from Files */
+    /* 7.3.3 Reading from Files. */
+
+    /* fgets 로 읽기. 줄단위. */
+    // $fh = fopen("testfile.txt", 'r') or
+    //     die("File does not exist or you lack permission to open it");
+
+    // $line = fgets($fh);
+    // fclose($fh);
+    // echo $line;
+
+    /* fread 로 읽기. 바이트단위. */
+    // $fh = fopen("testfile.txt", 'r') or
+    // die("File does not exist or you lack permission to open it");
+
+    // $text = fread($fh, 3);
+    // fclose($fh);
+    // echo $text;
 
 
-    /* 7.3.4 Copying Files */
+    /* 7.3.4 Copying Files 
+     testfile.txt 의 copy 인 copyfile.txt 를 만들어봅시다. */
+
+    // copy('testfile.txt', 'testfile2.txt') or die("Could not copy file");
+    // echo "File successfully copied to 'testfile2.txt'<br>";
+
+    // /* 복사가 실패해도 die 가 실행되어 프로그램 종료 하는것을 막고싶을때 */
+    // if (!copy('testfile.txt', 'testfile2.txt'))
+    //     echo "Could not copy file";
+    // else
+    //     echo "File successfully copied to 'testfile2.txt'";
 
 
-    /* 7.3.5 Moving a File */
+    /* 7.3.5 Moving a File 
+     파일을 이동시키는데 rename 을 통해서? 번역이 이상한 건가? */
+
+    // if (rename('testfile2.txt', 'testfile2.new'))
+    //     echo "File has been renamed";
+    // else   
+    //     echo "Could not rename file";
+
+    // 원본이 존재하지 않을 경우 생기는 오류를 막기위해 file_exists() 함수를 사용해 확인하라.
 
 
-    /* 7.3.6 Deleting a File */
+    /* 7.3.6 Deleting a File 
+     파일 삭제할때 주의할 것은, 해당 파일을 삭제해도 되는지 그리고 권한이 있는지
+    조심해야 합니다. */
+
+    if (unlink('testfile2.new'))
+        echo "Fils has been deleted";
+    else
+        echo "Could not delete file";
 
 
     /* 7.3.7 Updating Files */
