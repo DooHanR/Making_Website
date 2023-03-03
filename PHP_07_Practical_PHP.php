@@ -213,15 +213,15 @@
     이때 각 기능마다 파일 포인터의 위치가 다르고, 파일이 부재시에 행하는 동작들도
     모두 다르기 때문에 그점을 유의해줘야 할 것이다. */
 
-    $fh = fopen("testfile.txt", r+) or die("Failed to open file<br>");
-    $text = fgets($fh);
-    fseek($fh, 0, SEEK_END); // 파일의 끝까지 이동후 해당 지점에서 '0' 만큼 이동.
-    // fseek($fh, 18, SEEK_SET); // 시작 file pointer 에서 18만큼 이동(0->18).
-    // fseek($fh, 5, SEEK_CUR); // 현재 file pointer 에서 5만큼 이동 (18->23).
-    fwrite($fh, "\n$text") or die("Coult not write to file<br>");
-    fclose($fh);
+    // $fh = fopen("testfile.txt", r+) or die("Failed to open file<br>");
+    // $text = fgets($fh);
+    // fseek($fh, 0, SEEK_END); // 파일의 끝까지 이동후 해당 지점에서 '0' 만큼 이동.
+    // // fseek($fh, 18, SEEK_SET); // 시작 file pointer 에서 18만큼 이동(0->18).
+    // // fseek($fh, 5, SEEK_CUR); // 현재 file pointer 에서 5만큼 이동 (18->23).
+    // fwrite($fh, "\n$text") or die("Coult not write to file<br>");
+    // fclose($fh);
 
-    echo "File 'testfile.txt' successfully updated";
+    // echo "File 'testfile.txt' successfully updated";
 
   
     /* 7.3.8 Locking Files for Multiple Accesses 
@@ -230,11 +230,112 @@
      이를 위해 파일 잠금 플록 기능을 통해, 파일을 사용하는 동안
     다른 요청들을 대기열에 기다리게 합니다. 예제를 봅시다. */
 
+    // $fh = fopen("testfile.txt", 'r+') or die("Failed to open file");
+    // $text = fgets($fh);
 
-    /* 7.3.9 Reading an Entire File */
+    // if (flock($fh, LOCK_EX))
+    // {
+    //     fseek($fh, 0, SEEK_END);
+    //     fwrite($fh, "$text") or die("Coult not write to file");
+    //     flock($fh, LOCK_UN);
+    // }
+
+    // fclose($fh);
+    // echo "File 'testfile.txt' successfully updated"; 
+
+    /* 웹사이트의 응답속도를 빠르게 유지하기 위해 변경직전에 flock 을 시행하고
+    변경 하자마자 flock을 풀어주어야 한다.
+     그리고 또 유의 할점은 flock 이 모든 system 에서 호환 되는게 아니기 때문에
+    제대로 잠겼는지 확인할 필요가 있다. */
+
+    /* 또한 ISAPI 와 같은 멀티스레드 서버나 네트워크 파일 시스템에서는 flock
+    이 작동하지 않습니다. 그렇기 때문에 확신이 필요한 경우 test file에
+    flock 을 걸어 확인하는게 좋지만, 꼭 잠금을 해제해줘야 합니다.
+    또한 'die' 호출시 자동으로 잠금이 해제되고 파일이 닫힌다는 점을 주의하십시오. */
 
 
-    /* 7.3.10 Uploading Files */
+    /* 7.3.9 Reading an Entire File 
+    파일 열고 뭐하는 file handle 없이 파일 전체내용 읽기. 
+    'file_get_contents()' 함수를 이용하면 됨.
+    실제로는 훨씬 유용한데, internet 을 통해서도 가져올 수 있기 때문. */
+
+    // echo "<pre>";
+    // echo file_get_contents("testfile.txt");
+    // echo "</pre>";
+
+    // echo file_get_contents('http://oreilly.com'); // 와 이런 세상에 통으로 가져오네.
+
+
+    /* 7.3.10 Uploading Files 
+    파일 업로드하는게 어렵다고 느껴질 수 있지만 아래처럼
+    형식만 지정해준 후에는 나머지는 브라우저가 모두 처리 해준다.
+    한번 예시를 봅시다. */
+
+    echo <<<_END
+    <html><head><title>PHP Form Upload</title></head><body>
+    <form method='post' action='upload.php' enctype='multipart/form-data'>
+    Select File: <input type='file' name='filename' size='10'>
+    <input type='submit' value='Upload'>
+    </form>
+    _END;
+
+    if ($_FILES)
+    {
+        $name = $_FILES['filename']['name'];
+        move_uploaded_file($_FILES['filename']['tmp_name'], $name);
+        echo "Uploaded image '$name'<br><img src='$name'>";
+    }
+
+    echo "<body></html>";
+
+
+    /* 7.3.10.1 Using $_FILES 
+    파일이 업로드될때 $_FILES 배열에 다음의 다섯가지가 저장 된다. 
+    
+    1. $_FILES['file']['name']: 업로드 된 파일의 이름.
+    2. $_FILES['file']['type']: 파일의 content type(image/jpeg).
+    3. $_FILES['file']['size']: 파일의 byte 크기.
+    4. $_FILES['file']['tmp_name']: 서버에 저장된 임시파일의 이름.
+    5. $_FILES['file']['error']: 업로드 과정중에 생긴 에러 코드. */
+
+
+    /* 7.3.10.2 Validation 
+    검증은 중요합니다. server에 대한 해킹 시도 떄문만이 아니라, 파일이
+    제대로 전송되었는지, type 등이 일치하는지 확인해야 하기 때문입니다. 
+    아래의 예제는 위의 예제를 보다 안전하게 바꾼 것입니다. */
+
+    echo <<<_END
+    <html><head><title>PHP Form Upload</title></head><body>
+    <form method='post' action='upload2.php' enctype='multipart/form-data'>
+    Select a JPG, GIF, PNG or TIF File:
+    <input type='file' name='filename' size='10'>
+    <input type='submit' value='Upload'></form>
+    _END;
+
+    if ($_FILES)
+    {
+      $name = $_FILES['filename']['name'];
+  
+      switch($_FILES['filename']['type'])
+      {
+        case 'image/jpeg': $ext = 'jpg'; break;
+        case 'image/gif':  $ext = 'gif'; break;
+        case 'image/png':  $ext = 'png'; break;
+        case 'image/tiff': $ext = 'tif'; break;
+        default:           $ext = '';    break;
+      }
+      if ($ext)
+      {
+        $n = "image.$ext";
+        move_uploaded_file($_FILES['filename']['tmp_name'], $n);
+        echo "Uploaded image '$name' as '$n':<br>";
+        echo "<img src='$n'>";
+      }
+      else echo "'$name' is not an accepted image file";
+    }
+    else echo "No image has been uploaded";
+  
+    echo "</body></html>";
 
 
 
