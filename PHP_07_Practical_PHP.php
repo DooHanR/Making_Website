@@ -202,16 +202,33 @@
      파일 삭제할때 주의할 것은, 해당 파일을 삭제해도 되는지 그리고 권한이 있는지
     조심해야 합니다. */
 
-    if (unlink('testfile2.new'))
-        echo "Fils has been deleted";
-    else
-        echo "Could not delete file";
+    // if (unlink('testfile2.new'))
+    //     echo "Fils has been deleted";
+    // else
+    //     echo "Could not delete file";
 
 
-    /* 7.3.7 Updating Files */
+    /* 7.3.7 Updating Files 
+     파일을 수정하는것은 r+, w, w+, a+, a 와 같은 기능으로 수행하면 된다. 
+    이때 각 기능마다 파일 포인터의 위치가 다르고, 파일이 부재시에 행하는 동작들도
+    모두 다르기 때문에 그점을 유의해줘야 할 것이다. */
 
+    $fh = fopen("testfile.txt", r+) or die("Failed to open file<br>");
+    $text = fgets($fh);
+    fseek($fh, 0, SEEK_END); // 파일의 끝까지 이동후 해당 지점에서 '0' 만큼 이동.
+    // fseek($fh, 18, SEEK_SET); // 시작 file pointer 에서 18만큼 이동(0->18).
+    // fseek($fh, 5, SEEK_CUR); // 현재 file pointer 에서 5만큼 이동 (18->23).
+    fwrite($fh, "\n$text") or die("Coult not write to file<br>");
+    fclose($fh);
 
-    /* 7.3.8 Locking Files for Multiple Accesses */
+    echo "File 'testfile.txt' successfully updated";
+
+  
+    /* 7.3.8 Locking Files for Multiple Accesses 
+     웹 프로그램에는 여러 사람이 동시에 사용하는 경우가 많은데 
+    파일을 다룰때 동시에 처리하면 손상이 일어날 가능성이 있다. 
+     이를 위해 파일 잠금 플록 기능을 통해, 파일을 사용하는 동안
+    다른 요청들을 대기열에 기다리게 합니다. 예제를 봅시다. */
 
 
     /* 7.3.9 Reading an Entire File */
