@@ -271,22 +271,22 @@
     형식만 지정해준 후에는 나머지는 브라우저가 모두 처리 해준다.
     한번 예시를 봅시다. */
 
-    echo <<<_END
-    <html><head><title>PHP Form Upload</title></head><body>
-    <form method='post' action='upload.php' enctype='multipart/form-data'>
-    Select File: <input type='file' name='filename' size='10'>
-    <input type='submit' value='Upload'>
-    </form>
-    _END;
+    // echo <<<_END
+    // <html><head><title>PHP Form Upload</title></head><body>
+    // <form method='post' action='upload.php' enctype='multipart/form-data'>
+    // Select File: <input type='file' name='filename' size='10'>
+    // <input type='submit' value='Upload'>
+    // </form>
+    // _END;
 
-    if ($_FILES)
-    {
-        $name = $_FILES['filename']['name'];
-        move_uploaded_file($_FILES['filename']['tmp_name'], $name);
-        echo "Uploaded image '$name'<br><img src='$name'>";
-    }
+    // if ($_FILES)
+    // {
+    //     $name = $_FILES['filename']['name'];
+    //     move_uploaded_file($_FILES['filename']['tmp_name'], $name);
+    //     echo "Uploaded image '$name'<br><img src='$name'>";
+    // }
 
-    echo "<body></html>";
+    // echo "<body></html>";
 
 
     /* 7.3.10.1 Using $_FILES 
