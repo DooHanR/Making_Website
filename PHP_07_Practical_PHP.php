@@ -343,15 +343,30 @@
      php 에는 없는 함수를, 운영체제를 통해 실행할 수 있다.
     'exec' 함수를 이용해서 'ls', 'dir' 명령을 실행할 수 있다. 예제를 보자. */
 
+    /* exec.php */
     $cmd = "dir"; // window, mac, linux
     // $cmd = "ls"; // linux, unix & mac
 
     exec(escapeshellcmd($cmd), $output, $status);
 
-    
+    if ($status) echo "Exec command failed";
+    else
+    {
+        echo "<pre>";
+        // foreach($output as $line) echo htmlspecialchars("$line\n");
+        print_r($output); // 이건되네
+        echo "</pre>";
+    }
+
+    /* 이렇게 비슷한 exec 를 실행할때, unix나 윈도우 양쪽에서 모두 실행될 수 있도록
+    하는것도 중요하고, web 에서 보안문제로 출력하지 않을 수 있으므로 해당 문제에
+    대해서도 주의해야한다. */
 
 
-    /* 7.5 XHTML or HTML5? */
+
+    /* 7.5 XHTML or HTML5? 
+    XHTML 대신 HTML5가 채택됐다. 아무튼 간단하고 좋다. 
+    HTML5를 주로 사용해라~*/
 
 
 
