@@ -71,7 +71,48 @@
     USE : database 사용. */
 
 
+    /* 8.4.2.1 Creating a database */
+    
+    CREATE DATABASE publications; // DATABASE 생성.
+    USE publications; // Database chagned
+
+
+    /* 8.4.2.2  Creating Users 
+     신규 유저를 만들때 항상 범위를 지정해주어야 하며 범위를 지정하지 않을경우
+    비밀번호가 존재하지 않기 떄문에 심각한 보안 위혐을 초래 할 수 있다. 
+     또한 접속시에 -p'비밀번호' 의 형태는 아주 위험하다.*/
+
+    CREATE USER 'dhe'@'localhost' IDENTIFIED BY '7789';
+    GRANT ALL ON publications.* TO 'dhe'@'localhost';
+
+
+    /* 8.4.2.3 Creating a table 
+     ENGINE innoDB 는 query를 지원하는 수많은 엔진중에 하나로 MYSQL 5.6
+    이상에서 기본으로 제공하는 엔진입니다. 물론 생략해도 되지만 여기서는
+    강조를 위해 사용됐습니다.
+     그리고 명령어를 한줄로 쳐도 되지만 가독성을 위해서
+    여러줄로 치는것을 권장합니다. */
+
+    USE publications;
+
+    CREATE TABLE claassics (
+    author VARCHAR(128),
+    title VARCHAR(128),
+    type VARCHAR(16),
+    year CHAR(4)) ENGINE InnoDB;
+
+    DESCRIBE classics;
+
+
+    /* 8.4.2.4 Data Types */
+    /* 8.4.2.5 */
+
+
     /* 8.4.3 Data Types */
+    /* 8.4.3.1
+    /* 8.4.3.2
+    /* 8.4.3.3
+    /* 8.4.3.4
 
 
 
