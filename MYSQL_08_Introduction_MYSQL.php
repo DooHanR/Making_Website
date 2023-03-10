@@ -113,16 +113,36 @@
     않기 때문. 당시 개발자들은 이게 2155년 까지 쓰일거라고 생각을 안했다. */
     
     
-    /* 8.4.3.1 The CHAR data type */
+    /* 8.4.3.1 The CHAR data type 
+    - CHAR(n) : Exactly n(<=2500) CHAR(5) 
+    CHAR(5) 'Hello' ->5bytes
+    CHAR(57) 'Hello' -> 57bytes
+    
+    - VARCHAR(n) : Up to n(<=65535)
+    VARCHAR(7) 'Hello' -> 5bytes
+    VARCHAR(100) 'Goodbye' -> 7bytes
+    */
     
     
-    /* 8.4.3.2
+    /* 8.4.3.2 The BINARY data type
+     - BINARY(n) : Exactly n(<=255) 
+    CHAR와 유사, binary data 취급.
+
+    - VARBINARY(n) : Up to n(<=65535)
+    VARCHAR 와 마찬가지, binary data 취급.*/
     
     
-    /* 8.4.3.3
+    /* 8.4.3.3 The TEXT data types 
+     VARCHAR 와 TEXT data의 차이점은 VARCHAR은 전체필드를 
+    검색해야 할때 유용하고, TEXT 는 일부만 검색할때 유용합니다. 
+    
+    - TINYTEXT(n) : Up to n(<=255)
+    - MEDIUMTEXT(n) : Up to n(<=1.67e + 7)
+    - LONGTEXT(n) : Up to n(<=4.29e + 9)
+    - TEXT(n) : Up to n(<=65535) */
     
     
-    /* 8.4.3.4
+    /* 8.4.3.4 */
 
 
 
