@@ -136,13 +136,35 @@
      VARCHAR 와 TEXT data의 차이점은 VARCHAR은 전체필드를 
     검색해야 할때 유용하고, TEXT 는 일부만 검색할때 유용합니다. 
     
-    - TINYTEXT(n) : Up to n(<=255)
+    - TINYTEXT(n) : Up to n(<=255), string with a charater set
     - MEDIUMTEXT(n) : Up to n(<=1.67e + 7)
     - LONGTEXT(n) : Up to n(<=4.29e + 9)
     - TEXT(n) : Up to n(<=65535) */
     
     
-    /* 8.4.3.4 */
+    /* 8.4.3.4 The BLOB data types 
+     BLOB(Binary Large Object), 65536 이상의 data type에 유용하다. 
+    BLOB 와 BINARY data의 차이점은 BLOB는 기본값이 없다는 것이다. 
+    
+    - TINYBLOB(n) : Up to n(<=255), binaray data no character set.
+    - BLOB(n) : Up to n(<=65535), 이하 동문
+    - MEDIUMBLOB(n) : up to n(<=1.67e + 7), 동문
+    - LONGBLOB(n) : Up to n(<=4.29e + 9), 동문 */
+
+
+    /* 8.4.3.5 Numeric data types 
+     MYSQL 에서는 아주 광범위한 크기의 숫자 데이터를 처리 할 수 있지만
+    빠르고 간결한 데이터베이스를 위해 예상되는 최대 데이터 값을 처리할 수 있는
+    가장 작은 데이터형을 고르는게 중요합니다. */
+
+
+    /* 8.4.3.5 */
+
+
+    /* 8.4.3.5 */
+
+
+    /* 8.4.3.5 */ 
 
 
 
