@@ -95,7 +95,7 @@
 
     USE publications;
 
-    CREATE TABLE claassics (
+    CREATE TABLE classics (
     author VARCHAR(128),
     title VARCHAR(128),
     type VARCHAR(16),
@@ -104,15 +104,22 @@
     DESCRIBE classics;
 
 
-    /* 8.4.2.4 Data Types */
-    /* 8.4.2.5 */
-
-
+    /* 8.4.3 Data Types 
+    - CHAR, VARCHAR : char 는 고정형, varchar 는 가변형이다. 
+    char 는 크기에 미치지 못해도 공백으로 모두 채워지는 반면 varchar 는
+    해당 크기에만 맞춰서 적용된다. 하지만 varchar 는 오버헤드를 호출하기때문에
+    약간 속도가 char와 비교해 느린편이다. */
     
-    /* 8.4.3 Data Types */
+    
     /* 8.4.3.1
+    
+    
     /* 8.4.3.2
+    
+    
     /* 8.4.3.3
+    
+    
     /* 8.4.3.4
 
 
