@@ -170,12 +170,18 @@
     CREATE TABLE tablename (fieldname INT(4) ZEROFILL); // 일반적인 방식.
 
 
-    /* 8.4.3.6 DATE and TIME types */
-
+    /* 8.4.3.6 DATE and TIME types 
+    - DATETIME: '0000-00-00 00:00:00'
+    - DATE:     '0000-00-00'
+    - TIMESTAMP:'0000-00-00 00:00:00'
+    - TIME:     '00:00:00'
+    - YEAR:     '0000'(1901~2155) 
     
+     DATETIME과 TIMESTAMP의 차이점은 TIMESTAMP 는 1970~2037 까지의 범위만 출력하고
+    DATETIME은 조건없이 출력한다. */
 
 
-    /* 8.4.3.7 */
+    /* 8.4.3.7 THE AUTO_INCREMENT attribute */
 
 
 
