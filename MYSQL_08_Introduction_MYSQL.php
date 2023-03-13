@@ -169,13 +169,17 @@
     CREATE TABLE tablename (fieldname INT(4)); // 크기가 아닌 너비.
     CREATE TABLE tablename (fieldname INT(4) ZEROFILL); // 일반적인 방식.
 
-    /* 8.4.3.5 */
+
+    /* 8.4.3.6 DATE and TIME types */
+
+    
 
 
-    /* 8.4.3.5 */
+    /* 8.4.3.7 */
 
 
-    /* 8.4.3.5 */ 
+
+    /* 8.4.3.8 */ 
 
 
 
