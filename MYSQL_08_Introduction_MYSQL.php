@@ -155,7 +155,15 @@
     /* 8.4.3.5 Numeric data types 
      MYSQL 에서는 아주 광범위한 크기의 숫자 데이터를 처리 할 수 있지만
     빠르고 간결한 데이터베이스를 위해 예상되는 최대 데이터 값을 처리할 수 있는
-    가장 작은 데이터형을 고르는게 중요합니다. */
+    가장 작은 데이터형을 고르는게 중요합니다. 
+    
+    - TINYINT     (1)
+    - SMALLINT    (2)
+    - MEDIUMINT   (3)
+    - INT/INTEGER (4)
+    - BIGINT      (8)
+    - FLOAT       (4)
+    - DOUBLE/REAL (8) */
 
 
     /* 8.4.3.5 */
